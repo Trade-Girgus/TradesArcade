@@ -43,6 +43,20 @@
       font-style: italic;
       color: #cce6ff;
     }
+    nav {
+      background: #2563eb;
+      padding: 15px;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      font-size: 1.2em;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #cce6ff;
+    }
     .container {
       max-width: 1100px;
       margin: 40px auto;
@@ -155,6 +169,66 @@
     .suggestions a:hover {
       background: #1d4ed8;
     }
+    /* Newsletter Section */
+    .newsletter {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      margin-bottom: 40px;
+    }
+    .newsletter h2 {
+      color: #1e3a8a;
+      margin-bottom: 15px;
+    }
+    .newsletter form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .newsletter input[type="email"] {
+      padding: 10px;
+      border: 2px solid #2563eb;
+      border-radius: 6px;
+      width: 80%;
+      max-width: 400px;
+    }
+    .newsletter input[type="submit"] {
+      background: #2563eb;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .newsletter input[type="submit"]:hover {
+      background: #1d4ed8;
+    }
+    .faq {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      margin-bottom: 40px;
+    }
+    .faq h2 {
+      color: #1e3a8a;
+      margin-bottom: 15px;
+    }
+    .faq details {
+      margin-bottom: 10px;
+    }
+    .faq summary {
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    .faq summary:hover {
+      color: #2563eb;
+    }
   </style>
 </head>
 <body>
@@ -164,15 +238,24 @@
     <p>Home of Element Merger & Rocket Escape</p>
   </header>
 
+  <nav>
+    <a href="#about">About</a>
+    <a href="#games">Games</a>
+    <a href="#suggestions">Suggestions</a>
+    <a href="#support">Support</a>
+    <a href="#newsletter">Newsletter</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+
   <div class="container main-content">
     <!-- About Section -->
-    <div class="card">
+    <div class="card" id="about">
       <h2>About Trades Arcade</h2>
       <p>Trades Arcade is proud to present an exciting lineup of games built with passion and creativity. Our focus is on delivering engaging gameplay, polished design, and regular updates to keep our community entertained and connected.</p>
     </div>
 
     <!-- Games Section in Grid Layout -->
-    <div class="grid">
+    <div class="grid" id="games">
       <div class="card">
         <h2>Element Merger</h2>
         <h3>Coming Soon</h3>
@@ -188,14 +271,14 @@
     </div>
 
     <!-- Suggestions Section -->
-    <div class="suggestions">
+    <div class="suggestions" id="suggestions">
       <h2>Have Suggestions?</h2>
       <p>We'd love to hear your ideas for new games, updates, or improvements. Your feedback helps us grow and create the best experience possible!</p>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLScA_fz-r0s52dD8ajCe6A_e7Q1Xb-WfFmOVg07yL_UN7ie0pg/viewform?usp=header" target="_blank">Submit Your Suggestions</a>
     </div>
 
     <!-- Support & Contact Section -->
-    <div class="card">
+    <div class="card" id="support">
       <h2>Support & Contact</h2>
       <p>If you need help or have any questions regarding either game, please feel free to reach out:</p>
       <p><strong>Email:</strong> <a href="mailto:tradesarcade@gmail.com">tradesarcade@gmail.com</a></p>
@@ -221,11 +304,37 @@
       <a href="https://instagram.com/tradesarcadeofficial" target="_blank" title="Instagram">Instagram</a>
       <a href="https://tiktok.com/@tradesarcadeofficial" target="_blank" title="TikTok">TikTok</a>
     </div>
+
+    <!-- Newsletter Section -->
+    <div class="newsletter" id="newsletter">
+      <h2>Subscribe to Our Newsletter</h2>
+      <p>Stay updated with the latest news and updates from Trades Arcade. Enter your email below to subscribe:</p>
+      <form action="https://example.com/subscribe" method="post">
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <input type="submit" value="Subscribe">
+      </form>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="faq" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <details>
+        <summary>What is Trades Arcade?</summary>
+        <p>Trades Arcade is a gaming platform that offers a variety of engaging and well-designed games, focusing on delivering a great user experience and regular updates.</p>
+      </details>
+      <details>
+        <summary>How can I download Rocket Escape?</summary>
+        <p>You can download Rocket Escape from the <a href="https://apps.apple.com/us/app/rocket-escape/id6742431371" target="_blank">App Store</a>.</p>
+      </details>
+      <details>
+        <summary>How can I provide feedback or suggestions?</summary>
+        <p>You can submit your suggestions through our <a href="https://docs.google.com/forms/d/e/1FAIpQLScA_fz-r0s52dD8ajCe6A_e7Q1Xb-WfFmOVg07yL_UN7ie0pg/viewform?usp=header" target="_blank">Suggestions Form</a>.</p>
+      </details>
+    </div>
   </div>
 
   <footer>
-    &copy; 2025 Trades Arcade. All Rights Reserved. <br>
-    <a href="privacy-policy.html" target="_blank">Privacy Policy</a> | <a href="terms-of-service.html" target="_blank">Terms of Service</a>
+    &copy; 2025 Trades Arcade. All Rights Reserved.
   </footer>
 
 </body>
