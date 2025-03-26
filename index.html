@@ -13,77 +13,106 @@
     }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      color: #fff;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      color: #333;
       line-height: 1.6;
+      padding-bottom: 50px;
     }
     a {
-      color: #00c6ff;
+      color: #ff6f91;
       text-decoration: none;
       transition: color 0.3s ease;
     }
     a:hover {
-      color: #009bbf;
+      color: #e85a76;
     }
     header {
-      background-color: rgba(0, 0, 0, 0.4);
+      background-color: rgba(255, 255, 255, 0.8);
       padding: 20px;
       text-align: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 2px solid #ff6f91;
+      margin-bottom: 30px;
     }
     header h1 {
       font-size: 2.8em;
       margin-bottom: 5px;
+      color: #e85a76;
     }
     header p {
       font-size: 1.2em;
       font-style: italic;
+      color: #555;
     }
     .container {
       max-width: 1000px;
-      margin: 40px auto;
+      margin: auto;
       padding: 0 20px;
     }
     .card {
-      background-color: rgba(0, 0, 0, 0.3);
+      background-color: rgba(255, 255, 255, 0.9);
       border-radius: 10px;
       padding: 30px;
       margin-bottom: 30px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      color: #333;
     }
     .card h2 {
       margin-bottom: 15px;
       font-size: 2em;
-      border-bottom: 2px solid #00c6ff;
+      border-bottom: 2px solid #ff6f91;
       padding-bottom: 10px;
       display: inline-block;
+      color: #e85a76;
+    }
+    .card h3 {
+      margin-bottom: 10px;
+      color: #e85a76;
     }
     .btn {
       display: inline-block;
       padding: 10px 20px;
-      background-color: #00c6ff;
+      background-color: #ff6f91;
       color: #fff;
       border-radius: 5px;
       margin: 10px 5px 0 0;
       transition: background-color 0.3s ease;
+      font-weight: bold;
     }
     .btn:hover {
-      background-color: #009bbf;
+      background-color: #e85a76;
     }
     ul {
       list-style: none;
       margin-top: 15px;
+      padding-left: 0;
     }
     ul li {
       margin: 10px 0;
     }
+    .social {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .social a {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 10px;
+      background: #ff6f91;
+      color: #fff;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      line-height: 20px;
+      font-size: 1.2em;
+    }
     footer {
       text-align: center;
       padding: 20px;
-      background-color: rgba(0, 0, 0, 0.4);
+      background-color: rgba(255, 255, 255, 0.8);
       margin-top: 40px;
-      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      border-top: 2px solid #ff6f91;
       font-size: 0.9em;
+      color: #555;
     }
   </style>
 </head>
@@ -98,7 +127,7 @@
     <!-- About Section -->
     <div class="card">
       <h2>About Trades Arcade</h2>
-      <p>Trades Arcade is proud to present our exciting lineup of games. Our focus is on delivering engaging gameplay, polished design, and regular updates to keep our community entertained and connected.</p>
+      <p>Trades Arcade is proud to present our exciting lineup of games. Our focus is on delivering engaging gameplay, polished design, and regular updates to keep our community entertained and connected. We love creativity and fun, and our site reflects that vibe!</p>
     </div>
 
     <!-- Games Section -->
@@ -108,13 +137,11 @@
         <li>
           <h3>Element Merger</h3>
           <p>Combine elements to create powerful new compounds in this addictive puzzle adventure. Experiment, strategize, and unlock secrets as you progress through unique challenges.</p>
-          <a class="btn" href="element-merger.html" target="_blank">Play Element Merger</a>
           <a class="btn" href="privacy-policy-element-merger.html" target="_blank">Privacy Policy</a>
         </li>
         <li>
           <h3>Rocket Escape</h3>
           <p>Embark on an endless space adventure where you navigate your ship through challenging obstacles, collect stars, and upgrade your power-ups for an even more thrilling escape.</p>
-          <a class="btn" href="rocket-escape.html" target="_blank">Play Rocket Escape</a>
           <a class="btn" href="https://apps.apple.com/us/app/rocket-escape/id6742431371" target="_blank">Download on the App Store</a>
           <a class="btn" href="privacy-policy.html" target="_blank">Privacy Policy</a>
         </li>
@@ -129,7 +156,7 @@
       <a class="btn" href="https://forms.gle/W84dpZHXqgyUAyVK9" target="_blank">Submit a Support Request</a>
     </div>
 
-    <!-- Policies Section -->
+    <!-- Policies & Advertising Section -->
     <div class="card">
       <h2>Policies & Advertising</h2>
       <ul>
@@ -137,12 +164,16 @@
           <a href="ads-policy.html" target="_blank">Advertising & Data Collection Practices</a>
         </li>
         <li>
-          <a href="app-ads.txt" target="_blank">App-Ads.txt (Marketing & Monetization)</a>
-        </li>
-        <li>
           <a href="ad-networks.html" target="_blank">Third-Party Ad Network Policies</a>
         </li>
       </ul>
+    </div>
+
+    <!-- Social Media Section -->
+    <div class="card social">
+      <h2>Follow Us</h2>
+      <a href="https://instagram.com/yourtradesarcade" target="_blank" title="Instagram">IG</a>
+      <a href="https://tiktok.com/@yourtradesarcade" target="_blank" title="TikTok">TT</a>
     </div>
   </div>
 
