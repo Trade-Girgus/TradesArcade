@@ -169,44 +169,7 @@
     .suggestions a:hover {
       background: #1d4ed8;
     }
-    /* Newsletter Section */
-    .newsletter {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 30px;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-      margin-bottom: 40px;
-    }
-    .newsletter h2 {
-      color: #1e3a8a;
-      margin-bottom: 15px;
-    }
-    .newsletter form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-    }
-    .newsletter input[type="email"] {
-      padding: 10px;
-      border: 2px solid #2563eb;
-      border-radius: 6px;
-      width: 80%;
-      max-width: 400px;
-    }
-    .newsletter input[type="submit"] {
-      background: #2563eb;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    .newsletter input[type="submit"]:hover {
-      background: #1d4ed8;
-    }
+    /* FAQ Section */
     .faq {
       background: #ffffff;
       border-radius: 12px;
@@ -229,6 +192,56 @@
     .faq summary:hover {
       color: #2563eb;
     }
+    /* Slider Section */
+    .slider {
+      position: relative;
+      max-width: 100%;
+      margin: 40px auto;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .slides img {
+      width: 100%;
+      border-radius: 12px;
+    }
+    .slider .prev, .slider .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .slider .prev {
+      left: 10px;
+    }
+    .slider .next {
+      right: 10px;
+    }
+    .testimonial {
+      background: #f9fafb;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .testimonial h2 {
+      color: #1e3a8a;
+      margin-bottom: 15px;
+    }
+    .testimonial p {
+      color: #555;
+      font-style: italic;
+    }
   </style>
 </head>
 <body>
@@ -243,8 +256,8 @@
     <a href="#games">Games</a>
     <a href="#suggestions">Suggestions</a>
     <a href="#support">Support</a>
-    <a href="#newsletter">Newsletter</a>
     <a href="#faq">FAQ</a>
+    <a href="#testimonials">Testimonials</a>
   </nav>
 
   <div class="container main-content">
@@ -305,14 +318,15 @@
       <a href="https://tiktok.com/@tradesarcadeofficial" target="_blank" title="TikTok">TikTok</a>
     </div>
 
-    <!-- Newsletter Section -->
-    <div class="newsletter" id="newsletter">
-      <h2>Subscribe to Our Newsletter</h2>
-      <p>Stay updated with the latest news and updates from Trades Arcade. Enter your email below to subscribe:</p>
-      <form action="https://example.com/subscribe" method="post">
-        <input type="email" name="email" placeholder="Enter your email" required>
-        <input type="submit" value="Subscribe">
-      </form>
+    <!-- Slider Section -->
+    <div class="slider">
+      <div class="slides">
+        <img src="slide1.jpg" alt="Slide 1">
+        <img src="slide2.jpg" alt="Slide 2">
+        <img src="slide3.jpg" alt="Slide 3">
+      </div>
+      <button class="prev" onclick="prevSlide()">&#10094;</button>
+      <button class="next" onclick="nextSlide()">&#10095;</button>
     </div>
 
     <!-- FAQ Section -->
@@ -331,11 +345,46 @@
         <p>You can submit your suggestions through our <a href="https://docs.google.com/forms/d/e/1FAIpQLScA_fz-r0s52dD8ajCe6A_e7Q1Xb-WfFmOVg07yL_UN7ie0pg/viewform?usp=header" target="_blank">Suggestions Form</a>.</p>
       </details>
     </div>
+
+    <!-- Testimonials Section -->
+    <div class="testimonial" id="testimonials">
+      <h2>What Our Players Say</h2>
+      <p>"Trades Arcade offers some of the most engaging and fun games I've ever played! Highly recommend to anyone looking for quality entertainment."</p>
+      <p>- Happy Gamer</p>
+    </div>
   </div>
 
   <footer>
     &copy; 2025 Trades Arcade. All Rights Reserved.
   </footer>
+
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let slides = document.querySelectorAll('.slides img');
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = 'none';  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      slides[slideIndex-1].style.display = 'block';  
+      setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+
+    function prevSlide() {
+      slideIndex -= 2;
+      if (slideIndex < 0) {
+        slideIndex = document.querySelectorAll('.slides img').length - 1;
+      }
+      showSlides();
+    }
+
+    function nextSlide() {
+      showSlides();
+    }
+  </script>
 
 </body>
 </html>
