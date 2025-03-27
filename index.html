@@ -4,7 +4,196 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Trades Arcade Official Website</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d); /* Futuristic gradient background */
+      color: #fff;
+      line-height: 1.6;
+      padding-bottom: 50px;
+    }
+    a {
+      color: #ff6f61;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #ff9a8b;
+    }
+    header {
+      background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+      padding: 50px 20px;
+      text-align: center;
+      border-bottom: 5px solid #ff6f61;
+      color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    header p {
+      font-size: 1.5em;
+      font-style: italic;
+      color: #ff9a8b;
+    }
+    nav {
+      background: rgba(0, 0, 0, 0.9); /* Semi-transparent black background */
+      padding: 15px;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      font-size: 1.2em;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #ff9a8b;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    /* Main Content Layout */
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+    /* Grid layout for cards */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-gap: 20px;
+    }
+    .card {
+      background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      color: #fff;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+    }
+    .card h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #ff6f61;
+      border-bottom: 2px solid #ff9a8b;
+      padding-bottom: 10px;
+    }
+    .card h3 {
+      font-size: 1.4em;
+      margin-bottom: 10px;
+      color: #ff6f61;
+    }
+    .card p {
+      margin-bottom: 20px;
+      color: #ddd;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      background: #ff6f61;
+      color: #fff;
+      border-radius: 6px;
+      margin-top: 10px;
+      transition: background 0.3s ease, transform 0.3s ease;
+      text-align: center;
+    }
+    .btn:hover {
+      background: #ff9a8b;
+      transform: scale(1.05);
+    }
+    .social a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      background: #ff6f61;
+      color: #fff;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+    .social a:hover {
+      background: #ff9a8b;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      font-size: 1em;
+      border-top: 5px solid #ff6f61;
+      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    }
+    footer a {
+      color: #ff9a8b;
+    }
+    footer a:hover {
+      color: #fff;
+    }
+    /* Suggestions Section */
+    .suggestions {
+      background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 40px;
+      text-align: center;
+      border: 2px solid #ff6f61;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    }
+    .suggestions h2 {
+      color: #ff6f61;
+      margin-bottom: 15px;
+    }
+    .suggestions p {
+      margin-bottom: 20px;
+    }
+    .suggestions a {
+      background: #ff6f61;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+    .suggestions a:hover {
+      background: #ff9a8b;
+    }
+    /* FAQ Section */
+    .faq {
+      background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      margin-bottom: 40px;
+    }
+    .faq h2 {
+      color: #ff6f61;
+      margin-bottom: 15px;
+    }
+    .faq details {
+      margin-bottom: 10px;
+    }
+    .faq summary {
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    .faq summary:hover {
+      color: #ff9a8b;
+    }
+  </style>
 </head>
 <body>
 
@@ -103,193 +292,3 @@
 
 </body>
 </html>
-</style>
-/* Reset and base styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d); /* Futuristic gradient background */
-  color: #fff;
-  line-height: 1.6;
-  padding-bottom: 50px;
-}
-a {
-  color: #ff6f61;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-a:hover {
-  color: #ff9a8b;
-}
-header {
-  background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
-  padding: 50px 20px;
-  text-align: center;
-  border-bottom: 5px solid #ff6f61;
-  color: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-header h1 {
-  font-size: 3em;
-  margin-bottom: 10px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-header p {
-  font-size: 1.5em;
-  font-style: italic;
-  color: #ff9a8b;
-}
-nav {
-  background: rgba(0, 0, 0, 0.9); /* Semi-transparent black background */
-  padding: 15px;
-  text-align: center;
-}
-nav a {
-  color: #fff;
-  margin: 0 15px;
-  font-size: 1.2em;
-  transition: color 0.3s ease;
-}
-nav a:hover {
-  color: #ff9a8b;
-}
-.container {
-  max-width: 1100px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
-/* Main Content Layout */
-.main-content {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-/* Grid layout for cards */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 20px;
-}
-.card {
-  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-  border-radius: 12px;
-  padding: 30px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  color: #fff;
-  transition: transform 0.3s ease;
-}
-.card:hover {
-  transform: translateY(-10px);
-}
-.card h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
-  color: #ff6f61;
-  border-bottom: 2px solid #ff9a8b;
-  padding-bottom: 10px;
-}
-.card h3 {
-  font-size: 1.4em;
-  margin-bottom: 10px;
-  color: #ff6f61;
-}
-.card p {
-  margin-bottom: 20px;
-  color: #ddd;
-}
-.btn {
-  display: inline-block;
-  padding: 12px 20px;
-  background: #ff6f61;
-  color: #fff;
-  border-radius: 6px;
-  margin-top: 10px;
-  transition: background 0.3s ease, transform 0.3s ease;
-  text-align: center;
-}
-.btn:hover {
-  background: #ff9a8b;
-  transform: scale(1.05);
-}
-.social a {
-  display: inline-block;
-  margin: 10px;
-  padding: 12px 20px;
-  background: #ff6f61;
-  color: #fff;
-  border-radius: 6px;
-  transition: background 0.3s ease;
-}
-.social a:hover {
-  background: #ff9a8b;
-}
-footer {
-  text-align: center;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  font-size: 1em;
-  border-top: 5px solid #ff6f61;
-  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-}
-footer a {
-  color: #ff9a8b;
-}
-footer a:hover {
-  color: #fff;
-}
-/* Suggestions Section */
-.suggestions {
-  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
-  border-radius: 12px;
-  padding: 30px;
-  margin-bottom: 40px;
-  text-align: center;
-  border: 2px solid #ff6f61;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-}
-.suggestions h2 {
-  color: #ff6f61;
-  margin-bottom: 15px;
-}
-.suggestions p {
-  margin-bottom: 20px;
-}
-.suggestions a {
-  background: #ff6f61;
-  color: #fff;
-  padding: 12px 20px;
-  border-radius: 6px;
-  transition: background 0.3s ease;
-}
-.suggestions a:hover {
-  background: #ff9a8b;
-}
-/* FAQ Section */
-.faq {
-  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-  border-radius: 12px;
-  padding: 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  margin-bottom: 40px;
-}
-.faq h2 {
-  color: #ff6f61;
-  margin-bottom: 15px;
-}
-.faq details {
-  margin-bottom: 10px;
-}
-.faq summary {
-  font-size: 1.2em;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-.faq summary:hover {
-  color: #ff9a8b;
-}
-</style>
