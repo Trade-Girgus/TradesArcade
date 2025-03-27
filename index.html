@@ -4,245 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Trades Arcade Official Website</title>
-  <style>
-    /* Reset and base styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Arial', sans-serif;
-      background: #f0f4f8; /* Light background for readability */
-      color: #333;
-      line-height: 1.6;
-      padding-bottom: 50px;
-    }
-    a {
-      color: #1e3a8a;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    a:hover {
-      color: #2563eb;
-    }
-    header {
-      background: #1e3a8a;
-      padding: 50px 20px;
-      text-align: center;
-      border-bottom: 5px solid #2563eb;
-      color: #fff;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    header h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.5em;
-      font-style: italic;
-      color: #cce6ff;
-    }
-    nav {
-      background: #2563eb;
-      padding: 15px;
-      text-align: center;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 15px;
-      font-size: 1.2em;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: #cce6ff;
-    }
-    .container {
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    /* Main Content Layout */
-    .main-content {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-    }
-    /* Grid layout for cards */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      grid-gap: 20px;
-    }
-    .card {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-      color: #333;
-      transition: transform 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-10px);
-    }
-    .card h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
-      color: #1e3a8a;
-      border-bottom: 2px solid #2563eb;
-      padding-bottom: 10px;
-    }
-    .card h3 {
-      font-size: 1.4em;
-      margin-bottom: 10px;
-      color: #1e3a8a;
-    }
-    .card p {
-      margin-bottom: 20px;
-      color: #555;
-    }
-    .btn {
-      display: inline-block;
-      padding: 12px 20px;
-      background: #2563eb;
-      color: #fff;
-      border-radius: 6px;
-      margin-top: 10px;
-      transition: background 0.3s ease, transform 0.3s ease;
-      text-align: center;
-    }
-    .btn:hover {
-      background: #1d4ed8;
-      transform: scale(1.05);
-    }
-    .social a {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 20px;
-      background: #2563eb;
-      color: #fff;
-      border-radius: 6px;
-      transition: background 0.3s ease;
-    }
-    .social a:hover {
-      background: #1d4ed8;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #1e3a8a;
-      color: #fff;
-      font-size: 1em;
-      border-top: 5px solid #2563eb;
-      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-    }
-    footer a {
-      color: #cce6ff;
-    }
-    footer a:hover {
-      color: #fff;
-    }
-    /* Suggestions Section */
-    .suggestions {
-      background: #e3f2fd;
-      border-radius: 12px;
-      padding: 30px;
-      margin-bottom: 40px;
-      text-align: center;
-      border: 2px solid #2563eb;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    }
-    .suggestions h2 {
-      color: #1e3a8a;
-      margin-bottom: 15px;
-    }
-    .suggestions p {
-      margin-bottom: 20px;
-    }
-    .suggestions a {
-      background: #2563eb;
-      color: #fff;
-      padding: 12px 20px;
-      border-radius: 6px;
-      transition: background 0.3s ease;
-    }
-    .suggestions a:hover {
-      background: #1d4ed8;
-    }
-    /* FAQ Section */
-    .faq {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-      margin-bottom: 40px;
-    }
-    .faq h2 {
-      color: #1e3a8a;
-      margin-bottom: 15px;
-    }
-    .faq details {
-      margin-bottom: 10px;
-    }
-    .faq summary {
-      font-size: 1.2em;
-      cursor: pointer;
-      transition: color 0.3s ease;
-    }
-    .faq summary:hover {
-      color: #2563eb;
-    }
-    /* Slider Section */
-    .slider {
-      position: relative;
-      max-width: 100%;
-      margin: 40px auto;
-      overflow: hidden;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    .slides {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-    .slides img {
-      width: 100%;
-      border-radius: 12px;
-    }
-    .slider .prev, .slider .next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0, 0, 0, 0.5);
-      color: #fff;
-      padding: 10px;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-    }
-    .slider .prev {
-      left: 10px;
-    }
-    .slider .next {
-      right: 10px;
-    }
-    .testimonial {
-      background: #f9fafb;
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-      margin-bottom: 40px;
-      text-align: center;
-    }
-    .testimonial h2 {
-      color: #1e3a8a;
-      margin-bottom: 15px;
-    }
-    .testimonial p {
-      color: #555;
-      font-style: italic;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -257,7 +19,6 @@
     <a href="#suggestions">Suggestions</a>
     <a href="#support">Support</a>
     <a href="#faq">FAQ</a>
-    <a href="#testimonials">Testimonials</a>
   </nav>
 
   <div class="container main-content">
@@ -318,17 +79,6 @@
       <a href="https://tiktok.com/@tradesarcadeofficial" target="_blank" title="TikTok">TikTok</a>
     </div>
 
-    <!-- Slider Section -->
-    <div class="slider">
-      <div class="slides">
-        <img src="slide1.jpg" alt="Slide 1">
-        <img src="slide2.jpg" alt="Slide 2">
-        <img src="slide3.jpg" alt="Slide 3">
-      </div>
-      <button class="prev" onclick="prevSlide()">&#10094;</button>
-      <button class="next" onclick="nextSlide()">&#10095;</button>
-    </div>
-
     <!-- FAQ Section -->
     <div class="faq" id="faq">
       <h2>Frequently Asked Questions</h2>
@@ -345,46 +95,201 @@
         <p>You can submit your suggestions through our <a href="https://docs.google.com/forms/d/e/1FAIpQLScA_fz-r0s52dD8ajCe6A_e7Q1Xb-WfFmOVg07yL_UN7ie0pg/viewform?usp=header" target="_blank">Suggestions Form</a>.</p>
       </details>
     </div>
-
-    <!-- Testimonials Section -->
-    <div class="testimonial" id="testimonials">
-      <h2>What Our Players Say</h2>
-      <p>"Trades Arcade offers some of the most engaging and fun games I've ever played! Highly recommend to anyone looking for quality entertainment."</p>
-      <p>- Happy Gamer</p>
-    </div>
   </div>
 
   <footer>
     &copy; 2025 Trades Arcade. All Rights Reserved.
   </footer>
 
-  <script>
-    let slideIndex = 0;
-    showSlides();
-
-    function showSlides() {
-      let slides = document.querySelectorAll('.slides img');
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = 'none';  
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) {slideIndex = 1}    
-      slides[slideIndex-1].style.display = 'block';  
-      setTimeout(showSlides, 2000); // Change image every 2 seconds
-    }
-
-    function prevSlide() {
-      slideIndex -= 2;
-      if (slideIndex < 0) {
-        slideIndex = document.querySelectorAll('.slides img').length - 1;
-      }
-      showSlides();
-    }
-
-    function nextSlide() {
-      showSlides();
-    }
-  </script>
-
 </body>
 </html>
+</style>
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d); /* Futuristic gradient background */
+  color: #fff;
+  line-height: 1.6;
+  padding-bottom: 50px;
+}
+a {
+  color: #ff6f61;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #ff9a8b;
+}
+header {
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+  padding: 50px 20px;
+  text-align: center;
+  border-bottom: 5px solid #ff6f61;
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+header h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+header p {
+  font-size: 1.5em;
+  font-style: italic;
+  color: #ff9a8b;
+}
+nav {
+  background: rgba(0, 0, 0, 0.9); /* Semi-transparent black background */
+  padding: 15px;
+  text-align: center;
+}
+nav a {
+  color: #fff;
+  margin: 0 15px;
+  font-size: 1.2em;
+  transition: color 0.3s ease;
+}
+nav a:hover {
+  color: #ff9a8b;
+}
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+/* Main Content Layout */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+/* Grid layout for cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+.card {
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-10px);
+}
+.card h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #ff6f61;
+  border-bottom: 2px solid #ff9a8b;
+  padding-bottom: 10px;
+}
+.card h3 {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+  color: #ff6f61;
+}
+.card p {
+  margin-bottom: 20px;
+  color: #ddd;
+}
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #ff6f61;
+  color: #fff;
+  border-radius: 6px;
+  margin-top: 10px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  text-align: center;
+}
+.btn:hover {
+  background: #ff9a8b;
+  transform: scale(1.05);
+}
+.social a {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 20px;
+  background: #ff6f61;
+  color: #fff;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+.social a:hover {
+  background: #ff9a8b;
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-size: 1em;
+  border-top: 5px solid #ff6f61;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+footer a {
+  color: #ff9a8b;
+}
+footer a:hover {
+  color: #fff;
+}
+/* Suggestions Section */
+.suggestions {
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 40px;
+  text-align: center;
+  border: 2px solid #ff6f61;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+.suggestions h2 {
+  color: #ff6f61;
+  margin-bottom: 15px;
+}
+.suggestions p {
+  margin-bottom: 20px;
+}
+.suggestions a {
+  background: #ff6f61;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+.suggestions a:hover {
+  background: #ff9a8b;
+}
+/* FAQ Section */
+.faq {
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 40px;
+}
+.faq h2 {
+  color: #ff6f61;
+  margin-bottom: 15px;
+}
+.faq details {
+  margin-bottom: 10px;
+}
+.faq summary {
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.faq summary:hover {
+  color: #ff9a8b;
+}
+</style>
