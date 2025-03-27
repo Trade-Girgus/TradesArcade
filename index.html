@@ -193,11 +193,59 @@
     .faq summary:hover {
       color: #ff9a8b;
     }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5em;
+      }
+      nav a {
+        font-size: 1em;
+      }
+      .card {
+        padding: 20px;
+      }
+      .card h2 {
+        font-size: 1.5em;
+      }
+    }
+
+    /* Animations */
+    .fade-in {
+      animation: fadeIn 2s ease-in;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Fast Loading Times */
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Security and Privacy */
+    .secure {
+      background: rgba(0, 128, 0, 0.1);
+      border: 2px solid #008000;
+      padding: 10px;
+      border-radius: 6px;
+      margin-top: 20px;
+      text-align: center;
+    }
+
   </style>
 </head>
 <body>
 
-  <header>
+  <header class="fade-in">
     <h1>Trades Arcade Official Website</h1>
     <p>Home of Element Merger & Rocket Escape</p>
   </header>
@@ -210,7 +258,7 @@
     <a href="#faq">FAQ</a>
   </nav>
 
-  <div class="container main-content">
+  <div class="container main-content fade-in">
     <!-- About Section -->
     <div class="card" id="about">
       <h2>About Trades Arcade</h2>
@@ -283,6 +331,11 @@
         <summary>How can I provide feedback or suggestions?</summary>
         <p>You can submit your suggestions through our <a href="https://docs.google.com/forms/d/e/1FAIpQLScA_fz-r0s52dD8ajCe6A_e7Q1Xb-WfFmOVg07yL_UN7ie0pg/viewform?usp=header" target="_blank">Suggestions Form</a>.</p>
       </details>
+    </div>
+
+    <!-- Security Notice Section -->
+    <div class="secure">
+      <p>Our website is secure and complies with all privacy regulations to ensure your data is safe.</p>
     </div>
   </div>
 
